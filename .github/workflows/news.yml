@@ -22,7 +22,7 @@ jobs:
         run: npm install rss-parser
 
       - name: Run script
-        run: node news.js
+        run: node news_bot.js
 
       - name: Commit & push
         run: |
