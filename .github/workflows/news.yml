@@ -16,7 +16,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0   # 🔥 fix
+          fetch-depth: 0
 
       - name: Setup Node
         uses: actions/setup-node@v3
@@ -29,11 +29,8 @@ jobs:
       - name: Run script
         run: node news_bot.js
 
+      # 🔥 YE IMPORTANT PART HAI (AUTO COMMIT + PUSH)
       - name: Commit & push
-        run: |
-          git config --global user.name "bot"
-          git config --global user.email "bot@example.com"
-          git pull origin main --rebase
-          git add .
-          git commit -m "auto update news" || echo "no changes"
-          git push origin main
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "auto update news"
