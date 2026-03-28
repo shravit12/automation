@@ -1,38 +1,33 @@
-name: Auto Fetch News
+name: Auto News Update
 
 on:
   schedule:
-    - cron: "0 */6 * * *"
-  workflow_dispatch:
-
-permissions:
-  contents: write
+    - cron: "0 */6 * * *"   # har 6 ghante run
+  workflow_dispatch:        # manual run option
 
 jobs:
-  fetch-news:
+  build:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
 
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: "18"
 
       - name: Install dependencies
-        run: npm install rss-parser
+        run: npm install
 
       - name: Run script
         run: node news_bot.js
 
-     - name: Commit & Push
+      - name: Commit & Push
         run: |
-        git config --global user.name "bot"
-        git config --global user.email "bot@example.com"
-        git add .
-        git commit -m "auto update news" || echo "no changes"
-        git push
+          git config --global user.name "bot"
+          git config --global user.email "bot@example.com"
+          git add .
+          git commit -m "auto update news" || echo "No changes"
+          git push
