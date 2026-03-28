@@ -29,8 +29,10 @@ jobs:
       - name: Run script
         run: node news_bot.js
 
-      # 🔥 YE IMPORTANT PART HAI (AUTO COMMIT + PUSH)
-      - name: Commit & push
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "auto update news"
+     - name: Commit & Push
+        run: |
+        git config --global user.name "bot"
+        git config --global user.email "bot@example.com"
+        git add .
+        git commit -m "auto update news" || echo "no changes"
+        git push
