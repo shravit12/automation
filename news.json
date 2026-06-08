@@ -1,5 +1,10 @@
 [
   {
+    "title": "Is this the dawn of the Tokenpocalypse?",
+    "link": "https://techcrunch.com/2026/06/07/is-this-the-dawn-of-the-tokenpocalypse/",
+    "slug": ""
+  },
+  {
     "title": "Notion restores access to Anthropic after service disruption",
     "link": "https://techcrunch.com/2026/06/07/notion-restores-access-to-anthropic-after-service-disruption/",
     "slug": ""
@@ -22,11 +27,6 @@
   {
     "title": "OpenAI unveils Lockdown Mode to protect sensitive data from prompt injection attacks",
     "link": "https://techcrunch.com/2026/06/06/openai-unveils-lockdown-mode-to-protect-sensitive-data-from-prompt-injection-attacks/",
-    "slug": ""
-  },
-  {
-    "title": "What to expect from WWDC 2026: Siri’s highly anticipated revamp and Apple Intelligence updates",
-    "link": "https://techcrunch.com/2026/06/06/what-to-expect-from-wwdc-2026-siris-highly-anticipated-revamp-and-apple-intelligence-updates/",
     "slug": ""
   }
 ]
